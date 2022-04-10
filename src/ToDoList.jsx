@@ -19,6 +19,11 @@ export const ToDoList = () => {
         })
         setItem('')
     }
+    const keyPress = (e) => {
+        if (e.key === 'Enter') {
+            listOfItems()
+        }
+    }
 
     return (
         <>
@@ -31,6 +36,7 @@ export const ToDoList = () => {
                            value={item}
                            placeholder={'Add items'}
                            onChange={itemEvent}
+                           onKeyPress={keyPress}
                     />
                     <Button className={'newBtn'} onClick={listOfItems}>
                         <AddIcon/>
